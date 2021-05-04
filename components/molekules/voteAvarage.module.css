@@ -1,5 +1,4 @@
 .container{
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -7,6 +6,7 @@
     height: 20px;
     background-color: #FFCE00;
     border-radius: 5px;
-    bottom: 20px;
-    right: 10px;
+}
+.textSm{
+    margin: 0;
 }

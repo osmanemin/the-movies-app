@@ -1,0 +1,44 @@
+.container {
+  color: white;
+  max-width: 1200px;
+  max-width: 500px;
+}
+
+.titleXl {
+  margin-left: -3px;
+}
+
+.voteAvarage {
+  color: black;
+  margin-left: 20px;
+}
+
+.voteContainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+.textMd {
+  margin: 0;
+  margin-top: 20px;
+}
+
+.textSm {
+  margin: 0;
+  width: 40px;
+  height: 20px;
+  background-color: #ffce00;
+  color: black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.linkedText {
+  color: white;
+  text-decoration: underline;
+  margin-bottom: 25px;
+}

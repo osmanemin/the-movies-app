@@ -9,16 +9,17 @@ export default function FilmList() {
   const context = useContext(UserContext);
 
   return (
-    <div className={styles.container}>
-      {context.movies?.items.map((item) => (
+      <ul className={styles.container}>
+        {context.movies?.items?.map((item) => (
+          <li key={item.id}>
             <FilmCard
-              key={item.id}
               href={item.poster_path}
               title={item.title}
               voteAverage={item.vote_average}
               id={item.id}
             />
-      ))}
-    </div>
+          </li>
+        ))}
+      </ul>
   );
 }

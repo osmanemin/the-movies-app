@@ -7,7 +7,12 @@
   margin-bottom: 40px;
 }
 
-.movieImgContainer{
-    position: relative;
+.movieImgContainer {
+  position: relative;
 }
 
+.voteAverage {
+  bottom: 20px;
+  right: 10px;
+  position: absolute;
+}

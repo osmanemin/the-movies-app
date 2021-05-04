@@ -1,17 +1,16 @@
-import React from 'react'
+import React from "react";
+import cn from "classnames";
 
-import styles from './voteAvarage.module.css'
+import styles from "./voteAvarage.module.css";
 
-import {Star} from '../atoms/Images'
-import {TextSm} from '../atoms/Texts'
+import { Star } from "../atoms/Images";
+import { TextSm } from "../atoms/Texts";
 
-
-
-export default function VoteAvarage({voteAverage}) {
-    return (
-        <div className={styles.container}>
-            <Star/>
-            <TextSm text={voteAverage}/>
-        </div>
-    )
+export default function VoteAvarage({ voteAverage, className }) {
+  return (
+    <div className={cn(styles.container, className)}>
+      <Star />
+      <TextSm className={styles.textSm} text={voteAverage} />
+    </div>
+  );
 }

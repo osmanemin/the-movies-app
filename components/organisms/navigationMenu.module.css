@@ -1,0 +1,21 @@
+.container {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #2a2e9b;
+  padding: 20px;
+  height: 80vh;
+  flex: 1;
+}
+.menu{
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 760px) {
+    .container {
+        display: none;
+    }
+}

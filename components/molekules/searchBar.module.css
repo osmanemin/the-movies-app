@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.input{
+    outline: none;
+    border: none;
+    margin-left: 10px;
+    background-color: #2a2e9b;
+    font-size: 16px;
+    color: rgb(233, 229, 229);
+}

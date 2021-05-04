@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  cursor: pointer;
+  width: max-content;
+}
+
+.title {
+  margin-left: 10px;
+  color: white;
+}

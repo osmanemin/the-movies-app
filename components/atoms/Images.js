@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
+import styles from "./images.module.css";
+
 export const FilmPosterOfList = ({ href }) => {
   return (
     <div>
@@ -27,10 +29,30 @@ export const MostPopular = () => {
   return <Image src="/most_popular.svg" width={30} height={30} />;
 };
 
-export const FMIcon = ({...props}) => {
+export const FMIcon = ({ ...props }) => {
   return <Image {...props} src="/icon.svg" width={230} height={127} />;
 };
 
 export const Search = () => {
   return <Image src="/search.svg" width={25} height={25} />;
+};
+
+export const MoviePoster = ({ src, ...props }) => {
+  return (
+    <img
+      {...props}
+      className={styles.moviePoster}
+      src={"http://image.tmdb.org/t/p/w500" + src}
+    />
+  );
+};
+
+export const MovieBackdrop = ({ src, ...props }) => {
+  return (
+    <Image
+      src={"http://image.tmdb.org/t/p/w500" + src}
+      layout="fill"
+      {...props}
+    />
+  );
 };

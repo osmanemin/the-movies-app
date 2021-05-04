@@ -11,7 +11,7 @@ import { TitleSm } from "../atoms/Texts";
 export default function FilmCard({ href, title, voteAverage, id }) {
   return (
     <div className={styles.card}>
-      <Link href="movies/[movies]" as={`/movies/${slug(title)}-${id}`}>
+      <Link href="movies/[movie]" as={`/movies/${id.toString()}`}>
         <a>
           <div className={styles.movieImgContainer}>
             <FilmPosterOfList href={href} />

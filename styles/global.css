@@ -2,7 +2,6 @@ body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   margin: 0;
   min-height: 100vh;
-  padding:20px;
   /* background-image: linear-gradient(pink, purple); */
   background-repeat: no-repeat;
 }

@@ -1,9 +1,9 @@
 import React from "react";
 
-import FilmList from "../components/organisms/FilmList";
+import Index from "../components/templates/Index";
 
 function HomePage() {
-  return <FilmList></FilmList>
+  return <Index></Index>
 }
 
 export default HomePage;

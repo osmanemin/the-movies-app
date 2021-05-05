@@ -1,15 +1,14 @@
 import React from "react";
-import slug from 'slug';
+import slug from "slug";
 import getConfig from "next/config";
 
 import { Context } from "../../store/Context";
-
 import Movie from "../../components/templates/Movie/Movie";
 
 export default function movie({ character }) {
   return (
     <Context.Provider value={{ character }}>
-      <Movie/>
+      <Movie />
     </Context.Provider>
   );
 }
@@ -30,7 +29,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const id = params.movie.split("-").slice(-1)
+  const id = params.movie.split("-").slice(-1);
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=${publicRuntimeConfig.accessKey}`
   );

@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 
 import styles from "./filmContent.module.css";
 
-import { Context } from "../../store/Context";
-import { TitleXl, TitleLg, TextMd, TextSm } from "../atoms/Texts";
-import VoteAvarage from "../molekules/VoteAvarage";
+import { Context } from "../../../store/Context";
+import { TitleXl, TitleLg, TextMd, TextSm } from "../../atoms/Texts/Texts";
+import VoteAvarage from "../../molecules/VoteAvarage/VoteAvarage";
 
 export default function FilmContent() {
   const context = useContext(Context);

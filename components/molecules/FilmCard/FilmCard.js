@@ -4,9 +4,9 @@ import slug from 'slug';
 
 import styles from "./filmCard.module.css";
 
-import VoteAverage from "./VoteAvarage";
-import { FilmPosterOfList } from "../atoms/Images";
-import { TitleSm } from "../atoms/Texts";
+import VoteAverage from "../VoteAvarage/VoteAvarage";
+import { FilmPosterOfList } from "../../atoms/Images/Images";
+import { TitleSm } from "../../atoms/Texts/Texts";
 
 export default function FilmCard({ href, title, voteAverage, id }) {
   return (

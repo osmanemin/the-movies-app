@@ -2,8 +2,8 @@ import React from "react";
 
 import styles from "./searchBar.module.css";
 
-import { Search } from "../atoms/Images";
-import { InputText } from "../atoms/FormElements";
+import { Search } from "../../atoms/Images/Images";
+import { InputText } from "../../atoms/FormElements/FormElements";
 
 export default function SearchBar() {
   return (

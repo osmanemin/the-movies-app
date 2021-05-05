@@ -2,9 +2,9 @@ import React from "react";
 
 import styles from "./index.module.css";
 
-import FilmList from "../organisms/FilmList";
-import NavigationMenu from "../organisms/NavigationMenu";
-import FilterSide from "../organisms/FilterSide";
+import FilmList from "../../organisms/FilmList/FilmList";
+import NavigationMenu from "../../organisms/NavigationMenu/NavigationMenu";
+import FilterSide from "../../organisms/FilterSide/FilterSide";
 
 export default function Index() {
   return (

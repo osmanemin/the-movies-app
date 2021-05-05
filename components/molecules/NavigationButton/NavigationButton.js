@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./navigationButton.module.css";
 
-import { TitleMd } from "../atoms/Texts";
+import { TitleMd } from "../../atoms/Texts/Texts";
 
 export default function NavigationButton({ children, title }) {
   return (

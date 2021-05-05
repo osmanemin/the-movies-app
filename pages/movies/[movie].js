@@ -4,7 +4,7 @@ import getConfig from "next/config";
 
 import { Context } from "../../store/Context";
 
-import Movie from "../../components/templates/Movie";
+import Movie from "../../components/templates/Movie/Movie";
 
 export default function movie({ character }) {
   return (

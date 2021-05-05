@@ -2,8 +2,8 @@ import React from "react";
 
 import styles from "./navigationMenu.module.css";
 
-import { MostPopular, FMIcon } from "../atoms/Images";
-import NavigationButton from "../molekules/NavigationButton";
+import { MostPopular, FMIcon } from "../../atoms/Images/Images";
+import NavigationButton from "../../molecules/NavigationButton/NavigationButton";
 
 export default function NavigationMenu() {
   return (

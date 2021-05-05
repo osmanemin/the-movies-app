@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 
 import styles from "./movie.module.css";
 
-import { Context } from "../../store/Context";
-import FilmContent from "../organisms/FilmContent";
-import { MoviePoster, MovieBackdrop } from "../atoms/Images";
+import { Context } from "../../../store/Context";
+import FilmContent from "../../organisms/FilmContent/FilmContent";
+import { MoviePoster, MovieBackdrop } from "../../atoms/Images/Images";
 
 export default function Movie() {
   const context = useContext(Context);

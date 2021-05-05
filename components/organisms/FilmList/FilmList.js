@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 
 import styles from "./filmList.module.css";
 
-import FilmCard from "../molekules/FilmCard";
-import { UserContext } from "../../store/Context";
+import FilmCard from "../../molecules/FilmCard/FilmCard";
+import { UserContext } from "../../../store/Context";
 
 export default function FilmList() {
   const context = useContext(UserContext);

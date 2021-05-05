@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./filterSide.module.css";
 
-import SearchBar from "../molekules/SearchBar";
+import SearchBar from "../../molecules/SearchBar/SearchBar";
 
 export default function FilterSide() {
   return (

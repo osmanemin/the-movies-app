@@ -17,7 +17,7 @@ export default function SearchBar() {
   return (
     <div className={styles.container}>
       {/* <Search onClick={filterWithMovieName()} /> */}
-      <img onClick={()=>filterWithMovieName()} src="/search.svg" width={25} height={25} />;
+      <img className={styles.img} onClick={()=>filterWithMovieName()} src="/search.svg" width={25} height={25} />;
       <input
         ref={(node) => (inputRef.current = node)}
         className={styles.input}

@@ -13,3 +13,7 @@
   font-size: 16px;
   color: rgb(233, 229, 229);
 }
+
+.img{
+  cursor: pointer;
+}

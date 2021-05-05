@@ -1,6 +1,6 @@
 import React from "react";
 
-import Index from "../components/templates/Index";
+import Index from "../components/templates/Index/Index";
 
 function HomePage() {
   return <Index></Index>

@@ -6,7 +6,7 @@ import "../styles/global.css";
 import GetMovies from "../hooks/GetMovies";
 
 function MyApp({ Component, pageProps }) {
-  const [movies, getMovies] = GetMovies();
+  const [movies, getMovies, movieCategory, setMovieCategory] = GetMovies();
 
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   },[]);
 
   return (
-    <UserContext.Provider value={{movies, getMovies}}>
+    <UserContext.Provider value={{movies, getMovies, movieCategory, setMovieCategory}}>
       <Component {...pageProps} />
     </UserContext.Provider>
   );

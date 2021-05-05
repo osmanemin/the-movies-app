@@ -33,8 +33,8 @@ export const FMIcon = ({ ...props }) => {
   return <Image {...props} src="/icon.svg" width={230} height={127} />;
 };
 
-export const Search = () => {
-  return <Image src="/search.svg" width={25} height={25} />;
+export const Search = ({onClick}) => {
+  return <img onClick={onClick} src="/search.svg" width={25} height={25} />;
 };
 
 export const MoviePoster = ({ src, ...props }) => {

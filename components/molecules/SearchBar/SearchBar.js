@@ -1,25 +1,47 @@
-import React, {useContext} from "react";
-
+import React, { useState } from "react";
+import Link from "next/link";
 import styles from "./searchBar.module.css";
 
 import { Search } from "../../atoms/Images/Images";
 import { InputText } from "../../atoms/FormElements/FormElements";
-import { UserContext } from "../../../store/Context" 
 
 export default function SearchBar() {
-  const context = useContext(UserContext);
-  const inputRef = React.useRef();
+  const searchRef = React.useRef();
+  const [value, setValue] = useState("");
+  const handleChange = (e) => {
+    setValue(e.target.value);
+  };
 
-  const filterWithMovieName = () => {
-    context.setMovieCategory("search/movie?query="+inputRef.current.value+"&");
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      searchRef.current.click();
+    }
   };
 
   return (
     <div className={styles.container}>
-      {/* <Search onClick={filterWithMovieName()} /> */}
-      <img className={styles.img} onClick={()=>filterWithMovieName()} src="/search.svg" width={25} height={25} />;
-      <input
-        ref={(node) => (inputRef.current = node)}
+      <Link
+        href={{
+          pathname: "/search",
+          query: { search: value },
+        }}
+      >
+        <a>
+          <img
+            onClick={() => {
+              console.log("clicked");
+            }}
+            ref={searchRef}
+            className={styles.img}
+            src="/search.svg"
+            width={25}
+            height={25}
+          />
+        </a>
+      </Link>
+      <InputText
+        onKeyDown={handleKeyDown}
+        onChange={handleChange}
         className={styles.input}
         placeholder="Search By Title"
       />

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "./images.module.css";
 
@@ -25,11 +26,25 @@ export const MostPopular = () => {
 };
 
 export const FMIcon = ({ ...props }) => {
-  return <Image {...props} src="/icon.svg" width={230} height={127} />;
+  return (
+    <Link href="/">
+      <a>
+        <Image {...props} src="/icon.svg" width={230} height={127} />;
+      </a>
+    </Link>
+  );
 };
 
-export const Search = () => {
-  return <Image src="/search.svg" width={25} height={25} />;
+export const Search = ({ className, ...props }) => {
+  return (
+    <Image
+      className={className}
+      src="/search.svg"
+      width={25}
+      height={25}
+      {...props}
+    />
+  );
 };
 
 export const MoviePoster = ({ src, ...props }) => {

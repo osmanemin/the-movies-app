@@ -2,6 +2,7 @@ import React from "react";
 import slug from "slug";
 import getConfig from "next/config";
 
+
 import { Context } from "../../store/Context";
 import Movie from "../../components/templates/Movie/Movie";
 
@@ -16,6 +17,7 @@ export default function movie({ character }) {
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export async function getStaticPaths() {
+  
   const res = await fetch(
     `https://api.themoviedb.org/3/list/1?api_key=${publicRuntimeConfig.accessKey}`
   );

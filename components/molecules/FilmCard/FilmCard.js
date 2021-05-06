@@ -1,6 +1,6 @@
 import React from "react";
-import Link from "next/link"
-import slug from 'slug';
+import Link from "next/link";
+import slug from "slug";
 
 import styles from "./filmCard.module.css";
 
@@ -11,11 +11,20 @@ import { TitleSm } from "../../atoms/Texts/Texts";
 export default function FilmCard({ href, title, voteAverage, id }) {
   return (
     <div className={styles.card}>
-      <Link href="movies/[movie]" as={`/movies/${slug(title)}-${id.toString()}`}>
+      <Link
+        href={{
+          pathname: "movies/movie",
+          query: { id },
+        }}
+        //as={`/movies/${slug(title)}-${id.toString()}`}
+      >
         <a>
           <div className={styles.movieImgContainer}>
             <FilmPosterOfList href={href} />
-            <VoteAverage className={styles.voteAverage} voteAverage={voteAverage} />
+            <VoteAverage
+              className={styles.voteAverage}
+              voteAverage={voteAverage}
+            />
           </div>
 
           <TitleSm title={title} />

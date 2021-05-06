@@ -1,4 +1,3 @@
-import { UserContext } from "../store/Context";
 import { useEffect } from "react";
 
 import "../styles/global.css";
@@ -14,9 +13,7 @@ function MyApp({ Component, pageProps }) {
   },[]);
 
   return (
-    <UserContext.Provider value={{movies, getMovies, movieCategory, setMovieCategory}}>
       <Component {...pageProps} />
-    </UserContext.Provider>
   );
 }
 

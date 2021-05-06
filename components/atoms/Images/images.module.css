@@ -1,3 +1,6 @@
 .moviePoster {
   height: 80vh;
 }
+.filmPosterOfList{
+  border-radius: 10px;
+}

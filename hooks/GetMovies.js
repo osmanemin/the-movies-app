@@ -1,19 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import getConfig from "next/config";
+
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export default function GetMovies() {
   const [movies, setMovies] = useState();
-  const [movieCategory, setMovieCategory] = useState("list/1?");
 
-  const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
-
-  useEffect(() => {
-    getMoviesData();
-}, [movieCategory]);
-
-  const getMoviesData = async () => {
+  const getMoviesData = async (category) => {
     const res = await fetch(
-      `https://api.themoviedb.org/3/${movieCategory}api_key=${publicRuntimeConfig.accessKey}`
+      `https://api.themoviedb.org/3/${category}api_key=${publicRuntimeConfig.accessKey}`
     );
     const moviesList = await res.json();
     moviesList.items
@@ -21,12 +16,19 @@ export default function GetMovies() {
       : setMovies(moviesList.results);
   };
 
-  // https://api.themoviedb.org/3/search/movie?query=cars&api_key=4d94eea6262f660053da704fae1beb92
+  return [movies, getMoviesData];
+}
 
-  const setMoviesData = (ca) => {
-    console.log(ca);
-    setMovieCategory(ca);
+export function getMovieDetail() {
+  const [movie, setMovies] = useState("");
+
+  const getMoviesData = async (id) => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${publicRuntimeConfig.accessKey}`
+    );
+    const moviesList = await res.json();
+    setMovies(moviesList);
   };
 
-  return [movies, getMoviesData, movieCategory, setMoviesData];
+  return [movie, getMoviesData];
 }

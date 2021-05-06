@@ -14,7 +14,7 @@ export default function FilmList() {
           <li key={item.id}>
             <FilmCard
               href={item.poster_path}
-              title={item.title}
+              title={item.original_title}
               voteAverage={item.vote_average}
               id={item.id}
             />

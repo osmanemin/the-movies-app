@@ -8,18 +8,18 @@ import NavigationButton from "../../molecules/NavigationButton/NavigationButton"
 export default function NavigationMenu() {
   return (
     <div className={styles.container}>
-      <FMIcon></FMIcon>
+      <FMIcon className={styles.container} />
       <div className={styles.menu}>
-        <NavigationButton movieCategory="movie/upcoming" title="Upcoming">
+        <NavigationButton title="Upcoming" href="upcoming">
           <MostPopular />
         </NavigationButton>
-        <NavigationButton movieCategory="movie/top_rated" title="Top Rated">
+        <NavigationButton title="Top Rated" href="top-rated">
           <MostPopular />
         </NavigationButton>
-        <NavigationButton movieCategory="movie/popular" title="Most Popular">
+        <NavigationButton title="Most Popular" href="most-popular">
           <MostPopular />
         </NavigationButton>
-        <NavigationButton movieCategory="trending/movie/day" title="Trending">
+        <NavigationButton title="Trending" href="trending">
           <MostPopular />
         </NavigationButton>
       </div>

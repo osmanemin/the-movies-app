@@ -13,12 +13,12 @@ export default function Movie() {
     <div className={styles.page}>
         <MovieBackdrop 
           className={styles.bgImg}
-          src={context.character.backdrop_path}
+          src={context.movie.backdrop_path}
         />
         <div className={styles.bgColor}/>
       <div className={styles.container}>
         
-        <MoviePoster src={context.character.poster_path} />
+        <MoviePoster src={context.movie.poster_path} />
         <FilmContent />
       </div>
     </div>

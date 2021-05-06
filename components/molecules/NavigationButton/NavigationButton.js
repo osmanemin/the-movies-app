@@ -1,17 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
+import Link from "next/link";
 
 import styles from "./navigationButton.module.css";
 
-import { UserContext } from "../../../store/Context";
 import { TitleMd } from "../../atoms/Texts/Texts";
 
-export default function NavigationButton({ children, title, movieCategory }) {  
-  const context = useContext(UserContext);
-
+export default function NavigationButton({ children, title, href }) {
   return (
-    <div onClick={()=>{context.setMovieCategory(movieCategory+"?")}} className={styles.container}>
-      {children}
-      <TitleMd className={styles.title} title={title} />
-    </div>
+    <Link href={href}>
+      <a>
+        <div className={styles.container}>
+          {children}
+          <TitleMd className={styles.title} title={title} />
+        </div>
+      </a>
+    </Link>
   );
 }

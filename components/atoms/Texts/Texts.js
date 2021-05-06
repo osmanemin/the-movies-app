@@ -19,10 +19,6 @@ export const TitleXl = ({ title, className }) => {
   return <h1 className={cn(styles.titleXl, className)}>{title}</h1>;
 };
 
-export const TextSm = ({ text, className }) => {
-  return <p className={cn(styles.textSm, className)}>{text}</p>;
-};
-
-export const TextMd = ({ text, className }) => {
-  return <p className={cn(styles.textMd, className)}>{text}</p>;
+export const Text = ({ text, className }) => {
+  return <p className={className}>{text}</p>;
 };

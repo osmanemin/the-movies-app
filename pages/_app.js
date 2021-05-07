@@ -5,8 +5,7 @@ import "../styles/global.css";
 import GetMovies from "../hooks/GetMovies";
 
 function MyApp({ Component, pageProps }) {
-  const [movies, getMovies, movieCategory, setMovieCategory] = GetMovies();
-
+  const [movies, getMovies] = GetMovies();
 
   useEffect(() => {
     getMovies();

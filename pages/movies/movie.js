@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import slug from "slug";
-import getConfig from "next/config";
+import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 import { Context } from "../../store/Context";

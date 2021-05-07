@@ -1,6 +1,8 @@
 import { useState } from "react";
 import getConfig from "next/config";
 
+import BubbleSort from "./BubbleSort";
+
 const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
 export default function GetMovies() {
@@ -12,10 +14,9 @@ export default function GetMovies() {
     );
     const moviesList = await res.json();
     moviesList.items
-      ? setMovies(moviesList.items)
-      : setMovies(moviesList.results);
+      ? setMovies(BubbleSort(moviesList.items))
+      : setMovies(BubbleSort(moviesList.results));
   };
-
   return [movies, getMoviesData];
 }
 

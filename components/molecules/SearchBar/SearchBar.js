@@ -28,9 +28,6 @@ export default function SearchBar() {
       >
         <a>
           <img
-            onClick={() => {
-              console.log("clicked");
-            }}
             ref={searchRef}
             className={styles.img}
             src="/search.svg"

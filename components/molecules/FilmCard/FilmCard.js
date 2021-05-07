@@ -27,7 +27,7 @@ export default function FilmCard({ href, title, voteAverage, id }) {
             />
           </div>
 
-          <TitleSm title={title} />
+          <TitleSm className={styles.title} title={title} />
         </a>
       </Link>
     </div>

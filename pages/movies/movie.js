@@ -10,8 +10,6 @@ import { getMovieDetail } from "../../hooks/GetMovies";
 export default function movie() {
   const router = useRouter();
   const [movie, setMovie] = getMovieDetail();
-  const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
-
 
   useEffect(() => {
     setMovie(router.query.id);

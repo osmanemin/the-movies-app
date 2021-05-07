@@ -23,7 +23,7 @@ export default function SearchBar() {
       <Link
         href={{
           pathname: "/search",
-          query: { search: value },
+          query: { q: value },
         }}
       >
         <a>

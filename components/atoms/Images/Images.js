@@ -29,7 +29,7 @@ export const FMIcon = ({ ...props }) => {
   return (
     <Link href="/">
       <a>
-        <Image {...props} src="/icon.svg" width={230} height={127} />;
+        <Image {...props} src="/icon.svg" width={230} height={127} />
       </a>
     </Link>
   );

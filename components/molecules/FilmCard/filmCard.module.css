@@ -12,11 +12,12 @@
 }
 
 .voteAverage {
+  color: black;
   bottom: 20px;
   right: 10px;
   position: absolute;
 }
 
-.title{
+.title {
   color: white;
 }

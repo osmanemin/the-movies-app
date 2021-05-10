@@ -14,8 +14,8 @@ export default function FilterSide() {
   const array = ["---", "imdb: Low to High", "imdb: High to Low"];
 
   useEffect(() => {
-    sortType === "imdb: High to Low" && context.setMovies(BubbleSort(context.movies));
     sortType === "imdb: Low to High" && context.setMovies(BubbleSort(context.movies).reverse());
+    sortType === "imdb: High to Low" && context.setMovies(BubbleSort(context.movies));
 
   }, [sortType]);
 

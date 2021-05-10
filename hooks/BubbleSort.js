@@ -12,7 +12,7 @@ export const BubbleSort = (array) => {
       }
     }
   }
-  return array;
+  return [...array]
 };
 
 export default BubbleSort;

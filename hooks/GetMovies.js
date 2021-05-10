@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import getConfig from "next/config";
 
 import BubbleSort from "./BubbleSort";
@@ -14,21 +14,26 @@ export default function GetMovies() {
     );
     const moviesList = await res.json();
     moviesList.items
-      ? setMovies(BubbleSort(moviesList.items))
-      : setMovies(BubbleSort(moviesList.results));
+      ? setMovies(moviesList.items)
+      : setMovies(moviesList.results);
   };
-  return [movies, getMoviesData];
+
+  const sorting = () => {
+    setMovies(BubbleSort(movies));
+  }
+
+  return [movies, setMovies, getMoviesData];
 }
 
 export function getMovieDetail() {
-  const [movie, setMovies] = useState("");
+  const [movie, setMovie] = useState("");
 
   const getMoviesData = async (id) => {
     const res = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${publicRuntimeConfig.accessKey}`
     );
     const moviesList = await res.json();
-    setMovies(moviesList);
+    setMovie(moviesList);
   };
 
   return [movie, getMoviesData];

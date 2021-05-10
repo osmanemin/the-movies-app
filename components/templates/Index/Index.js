@@ -9,14 +9,14 @@ import FilterSide from "../../organisms/FilterSide/FilterSide";
 import GetMovies from "../../../hooks/GetMovies";
 
 export default function Index({ category }) {
-  const [movies, getMovies] = GetMovies();
+  const [movies, setMovies, getMovies] = GetMovies();
 
   useEffect(() => {
     getMovies(category);
   }, [category]);
 
   return (
-    <UserContext.Provider value={{ movies, getMovies }}>
+    <UserContext.Provider value={{ movies, setMovies, getMovies }}>
       <div className={styles.page}>
         <div className={styles.container}>
           <NavigationMenu />

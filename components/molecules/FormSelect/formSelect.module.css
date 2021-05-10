@@ -1,0 +1,10 @@
+.title{
+    color:white;
+    margin-right: 10px;
+}
+.optionsContainer{
+    height: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}

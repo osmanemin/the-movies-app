@@ -10,7 +10,7 @@ export default function SearchBar() {
   };
 
   const handleSearch = () => {
-    window.location.href = `/search?q=${value}`;
+    value !== "" &&  (window.location.href = `/search?q=${value}`);
   };
 
   const handleKeyDown = (event) => {

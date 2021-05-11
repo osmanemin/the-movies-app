@@ -10,12 +10,9 @@ export default function FormSelect({ title, setSortType, values }) {
     <div>
       <label className={styles.title}>{title}</label>
       <select className={styles.optionsContainer} onChange={sortingTypeChange}>
-          {/*values.map((i) => {(
-             <option value={i}>{i}</option>
-          )})*/}
-        <option value={values[0]}>{values[0]}</option>;
-        <option value={values[1]}>{values[1]}</option>;
-        <option value={values[2]}>{values[2]}</option>;
+          {values.map((value) => {
+             return <option value={value}>{value}</option>
+          })}
       </select>
     </div>
   );

@@ -35,18 +35,6 @@ export const FMIcon = ({ ...props }) => {
   );
 };
 
-export const Search = ({ className, ...props }) => {
-  return (
-    <Image
-      className={className}
-      src="/search.svg"
-      width={25}
-      height={25}
-      {...props}
-    />
-  );
-};
-
 export const MoviePoster = ({ src, ...props }) => {
   return (
     <img

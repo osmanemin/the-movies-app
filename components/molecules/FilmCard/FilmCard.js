@@ -16,7 +16,6 @@ export default function FilmCard({ href, title, voteAverage, id }) {
           pathname: "movies/movie",
           query: { id },
         }}
-        //as={`/movies/${slug(title)}-${id.toString()}`}
       >
         <a>
           <div className={styles.movieImgContainer}>

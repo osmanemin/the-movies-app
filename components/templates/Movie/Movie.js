@@ -11,13 +11,12 @@ export default function Movie() {
 
   return (
     <div className={styles.page}>
-        <MovieBackdrop 
-          className={styles.bgImg}
-          src={context.movie.backdrop_path}
-        />
-        <div className={styles.bgColor}/>
+      <MovieBackdrop
+        className={styles.bgImg}
+        src={context.movie.backdrop_path}
+      />
+      <div className={styles.bgColor} />
       <div className={styles.container}>
-        
         <MoviePoster src={context.movie.poster_path} />
         <FilmContent />
       </div>

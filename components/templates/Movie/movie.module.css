@@ -1,5 +1,5 @@
 .page {
-  width: 100%;
+  width: 100vw;
 }
 
 .container {
@@ -14,10 +14,25 @@
   max-width: 1200px;
   align-items: center;
   height: 100vh;
-
 }
+
 .bgImg {
   z-index: -1;
+}
+
+.title {
+  display: inline;
+  width: fit-content;
+  text-decoration: underline;
+  color: whitesmoke;
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30px;
+  margin: auto;
+
 }
 
 .bgColor {

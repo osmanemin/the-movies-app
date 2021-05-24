@@ -16,6 +16,14 @@ export default function Movie() {
         src={context.movie.backdrop_path}
       />
       <div className={styles.bgColor} />
+      <h1
+        onClick={() => {
+          window.location.href = "/";
+        }}
+        className={styles.title}
+      >
+        The Movies App
+      </h1>
       <div className={styles.container}>
         <MoviePoster src={context.movie.poster_path} />
         <FilmContent />

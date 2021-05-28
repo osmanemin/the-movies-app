@@ -7,7 +7,7 @@ export default function FormSelect({ title, setSortType, values }) {
     setSortType(event.target.value);
   };
   return (
-    <div>
+    <div className={styles.container}>
       <label className={styles.title}>{title}</label>
       <select className={styles.optionsContainer} onChange={sortingTypeChange}>
           {values.map((value, index) => {

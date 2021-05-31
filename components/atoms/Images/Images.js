@@ -4,12 +4,12 @@ import Link from "next/link";
 
 import styles from "./images.module.css";
 
-export const FilmPosterOfList = ({ href }) => {
+export const FilmPosterOfList = ({ src }) => {
   return (
     <div>
       <Image
         className={styles.filmPosterOfList}
-        src={`http://image.tmdb.org/t/p/w500${href}`}
+        src={`http://image.tmdb.org/t/p/w500${src}`}
         width={200}
         height={250}
       />

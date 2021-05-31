@@ -10,13 +10,13 @@ export default function FilmList() {
 
   return (
       <ul className={styles.container}>
-        {context.movies?.map((item) => (
-          <li key={item.id}>
+        {context.movies?.map((movie) => (
+          <li key={movie.id}>
             <FilmCard
-              href={item.poster_path}
-              title={item.original_title}
-              voteAverage={item.vote_average}
-              id={item.id}
+              src={movie.poster_path}
+              title={movie.original_title}
+              voteAverage={movie.vote_average}
+              id={movie.id}
             />
           </li>
         ))}

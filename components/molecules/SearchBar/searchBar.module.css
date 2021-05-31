@@ -55,3 +55,13 @@
   bottom: 0;
   margin: auto;
 }
+
+.popup{
+  position: absolute;
+  top: 100%;
+  height: fit-content;
+  width: 100%;
+  border-top: white solid 5px;
+  background-color: #24292e;
+
+}

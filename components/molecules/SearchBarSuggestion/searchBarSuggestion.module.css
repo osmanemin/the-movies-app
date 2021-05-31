@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    align-items: center;
+    background-color: #24292e;
+    margin: 10px 20px;
+}
+
+.poster{
+    width: 36px;
+}
+
+.title{
+    margin-left: 20px;
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+}

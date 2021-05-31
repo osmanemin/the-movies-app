@@ -1,15 +1,22 @@
 import React, { useState, useRef } from "react";
+
 import styles from "./searchBar.module.css";
 
+import { getSuggestionsMovies } from "../../../hooks/GetMovies";
+import SearchBarSuggestion from "../SearchBarSuggestion/SearchBarSuggestion";
+
 export default function SearchBar() {
-  const inputEl = useRef(null);
+  const inputRef = useRef(null);
   const [value, setValue] = useState("");
   const [displayBg, setDisplayBg] = useState("none");
   const [displayCancelButton, setDisplayCancelButton] = useState("none");
+  const [displayPopup, setDisplayPopup] = useState("none");
+
+  const [suggestions, clearSuggestions, setSuggestions] = getSuggestionsMovies();
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    event.target.value.length > 2 && adviceMovies(event.target.value);
+    event.target.value.length > 2 ? getSuggestions(event.target.value): clearSuggestions([]);
   };
 
   const handleSearch = () => {
@@ -27,21 +34,28 @@ export default function SearchBar() {
   const setDisplays = (display) => {
     setDisplayCancelButton(display);
     setDisplayBg(display);
+    setDisplayPopup(display);
+    clearSuggestions([])
   };
 
   const handleCancel = () => {
     setDisplays("none");
-    inputEl.current.value = "";
-    setValue("")
+    inputRef.current.value = "";
+    setValue("");
   };
 
-  const adviceMovies = () => {};
+  const getSuggestions = (value) => {
+    setDisplayPopup("block");
+    setSuggestions(value);
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.content}>
         <img
-          onClick={() => {handleSearch}}
+          onClick={() => {
+            handleSearch;
+          }}
           className={styles.img}
           src="/search.svg"
           width={25}
@@ -52,7 +66,7 @@ export default function SearchBar() {
             setDisplays("block");
           }}
           type="text"
-          ref={inputEl}
+          ref={inputRef}
           onKeyDown={handleKeyDown}
           onChange={handleChange}
           className={styles.input}
@@ -66,6 +80,16 @@ export default function SearchBar() {
           className={styles.closeButton}
           src="/cancel.svg"
         />
+        <div style={{ display: `${displayPopup}` }} className={styles.popup}>
+          {suggestions.slice(0,5).map((suggestion, index) => (
+            <SearchBarSuggestion
+              src={suggestion.poster_path}
+              title={suggestion.original_title}
+              key={index}
+              id={suggestion.id}
+            />
+          ))}
+        </div>
       </div>
       <div
         onClick={() => {

@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import slug from "slug";
 
 import styles from "./filmCard.module.css";
 
@@ -8,7 +7,7 @@ import VoteAverage from "../VoteAvarage/VoteAvarage";
 import { FilmPosterOfList } from "../../atoms/Images/Images";
 import { TitleSm } from "../../atoms/Texts/Texts";
 
-export default function FilmCard({ href, title, voteAverage, id }) {
+export default function FilmCard({ src, title, voteAverage, id }) {
   return (
     <div className={styles.card}>
       <Link
@@ -19,7 +18,7 @@ export default function FilmCard({ href, title, voteAverage, id }) {
       >
         <a>
           <div className={styles.movieImgContainer}>
-            <FilmPosterOfList href={href} />
+            <FilmPosterOfList src={src} />
             <VoteAverage
               className={styles.voteAverage}
               voteAverage={voteAverage}

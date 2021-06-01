@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  z-index: 9998;
+  z-index: 8;
   margin: 0 30px;
   background-color: #24292e;
   position: relative;
@@ -28,7 +28,7 @@
 
 .input {
   width: calc(90% - 50px);
-  z-index: 9999;
+  z-index: 9;
   outline: none;
   border: none;
   margin-left: 10px;
@@ -40,12 +40,12 @@
 
 .img {
   margin-left: 20px;
-  z-index: 9999;
+  z-index: 9;
   cursor: pointer;
 }
 
 .closeButton{
-  z-index: 9999;
+  z-index: 9;
   cursor: pointer;
   width: 24px;
   height: 24px;

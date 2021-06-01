@@ -1,0 +1,75 @@
+.container {
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  width: fit-content;
+  color: white;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.optionsContainer {
+  background-color: #24292e;
+  color: white;
+  padding: 5px;
+  padding-right: 10px;
+  border-radius: 5px;
+  outline: none;
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.transparentArea{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.arrowBottom{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 5px solid;
+  border-color: white transparent  transparent transparent;
+  top: 17px;
+  right: 15px;
+}
+
+.select{
+  width: 180px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-left: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  white-space: nowrap;
+  border: 1px solid white;
+  padding: 0 20px 0 0;
+}
+
+.option {
+  padding: 8px 16px;
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    margin-right: 0;
+    width: 100%;
+    justify-content: center;
+    height: 80px;
+  }
+}

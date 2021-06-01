@@ -1,0 +1,11 @@
+.container {
+  text-align: center;
+  padding: 10px 20px;
+  white-space: nowrap;
+  border: 1px white solid;
+}
+
+.text {
+    margin: 0;
+    font-size: 12px;
+}

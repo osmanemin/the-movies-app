@@ -11,6 +11,7 @@ export default function SearchBar() {
   const [displayBg, setDisplayBg] = useState("none");
   const [displayCancelButton, setDisplayCancelButton] = useState("none");
   const [displayPopup, setDisplayPopup] = useState("none");
+  const [zIndex, setZIndex] = useState("9");
 
   const [suggestions, clearSuggestions, setSuggestions] = getSuggestionsMovies();
 
@@ -35,6 +36,7 @@ export default function SearchBar() {
     setDisplayCancelButton(display);
     setDisplayBg(display);
     setDisplayPopup(display);
+    display === "none" ? setZIndex("0"): setZIndex("9")
     clearSuggestions([])
   };
 
@@ -50,8 +52,8 @@ export default function SearchBar() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
+    <div className={styles.container} style={{zIndex: `${zIndex}0`}}>
+      <div className={styles.content} >
         <img
           onClick={() => {
             handleSearch;

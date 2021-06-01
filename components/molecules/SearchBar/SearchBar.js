@@ -11,7 +11,7 @@ export default function SearchBar() {
   const [displayBg, setDisplayBg] = useState("none");
   const [displayCancelButton, setDisplayCancelButton] = useState("none");
   const [displayPopup, setDisplayPopup] = useState("none");
-  const [zIndex, setZIndex] = useState("9");
+  const [zIndex, setZIndex] = useState("0");
 
   const [suggestions, clearSuggestions, setSuggestions] = getSuggestionsMovies();
 

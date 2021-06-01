@@ -4,7 +4,7 @@ import styles from "./filterSide.module.css";
 
 import { UserContext } from "../../../store/Context";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
-import FormSelect from "../../molecules/FormSelect/FormSelect";
+import CustomSelection from "../../molecules/CustomSelection/CustomSelection";
 import BubbleSort from "../../../hooks/BubbleSort";
 
 export default function FilterSide() {
@@ -40,7 +40,7 @@ export default function FilterSide() {
   return (
     <div className={styles.container}>
       <SearchBar />
-      <FormSelect title="Sort by" setSortType={setSortType} values={array} />
+      <CustomSelection title="Sort by" setSortType={setSortType} values={array} />
     </div>
   );
 }

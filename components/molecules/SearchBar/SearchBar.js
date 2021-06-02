@@ -13,15 +13,21 @@ export default function SearchBar() {
   const [displayPopup, setDisplayPopup] = useState("none");
   const [zIndex, setZIndex] = useState("0");
 
-  const [suggestions, clearSuggestions, setSuggestions] = getSuggestionsMovies();
+  const [suggestions, clearSuggestions, setSuggestions] =
+    getSuggestionsMovies();
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    event.target.value.length > 2 ? getSuggestions(event.target.value): clearSuggestions([]);
+    event.target.value.length > 2
+      ? getSuggestions(event.target.value)
+      : clearSuggestions([]);
   };
 
   const handleSearch = () => {
-    value !== "" && (window.location.href = `/search?q=${value}`);
+    if (value !== "") {
+      window.location.href = `/search?q=${value}`;
+      handleCancel()
+    }
   };
 
   const handleKeyDown = (event) => {
@@ -36,8 +42,8 @@ export default function SearchBar() {
     setDisplayCancelButton(display);
     setDisplayBg(display);
     setDisplayPopup(display);
-    display === "none" ? setZIndex("0"): setZIndex("9")
-    clearSuggestions([])
+    display === "none" ? setZIndex("0") : setZIndex("9");
+    clearSuggestions([]);
   };
 
   const handleCancel = () => {
@@ -52,8 +58,8 @@ export default function SearchBar() {
   };
 
   return (
-    <div className={styles.container} style={{zIndex: `${zIndex}0`}}>
-      <div className={styles.content} >
+    <div className={styles.container} style={{ zIndex: `${zIndex}0` }}>
+      <div className={styles.content}>
         <img
           onClick={() => {
             handleSearch;
@@ -83,7 +89,7 @@ export default function SearchBar() {
           src="/cancel.svg"
         />
         <div style={{ display: `${displayPopup}` }} className={styles.popup}>
-          {suggestions.slice(0,5).map((suggestion, index) => (
+          {suggestions.slice(0, 5).map((suggestion, index) => (
             <SearchBarSuggestion
               src={suggestion.poster_path}
               title={suggestion.original_title}

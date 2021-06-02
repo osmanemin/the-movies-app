@@ -1,16 +1,39 @@
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
+import getConfig from "next/config";
 
+import { UserContext } from "../store/Context";
 import Index from "../components/templates/Index/Index";
 
 export default function Search() {
-  const router = useRouter();
+  const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
 
-  const [query, setQuery] = useState(router.query.q);
+  const [moviesInState, setMoviesInState] = useState([]);
+
+  let movies;
+
+  const [query, setQuery] = useState();
 
   useEffect(() => {
-    setQuery(router.query.q);
-  }, [router.query]);
+    setQuery(window.location.href.split("=")[1]);
+  }, []);
 
-  return <Index category={`search/movie?query=${query}&`}></Index>;
+  useEffect(() => {
+    getMovies();
+  }, [query]);
+
+  const getMovies = async () => {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${publicRuntimeConfig.accessKey}`
+    );
+
+    const moviesList = await res.json();
+    movies = moviesList.results;
+    setMoviesInState(movies);
+  };
+
+  return (
+    <UserContext.Provider value={{ movies, moviesInState, setMoviesInState }}>
+      <Index />
+    </UserContext.Provider>
+  );
 }

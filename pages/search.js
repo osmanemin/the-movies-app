@@ -15,7 +15,7 @@ export default function Search() {
 
   useEffect(() => {
     setQuery(window.location.href.split("=")[1]);
-  }, []);
+  });
 
   useEffect(() => {
     getMovies();

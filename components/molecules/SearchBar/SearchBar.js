@@ -62,7 +62,7 @@ export default function SearchBar() {
       <div className={styles.content}>
         <img
           onClick={() => {
-            handleSearch;
+            handleSearch();
           }}
           className={styles.img}
           src="/search.svg"

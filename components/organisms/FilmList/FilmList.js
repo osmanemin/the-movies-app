@@ -10,7 +10,7 @@ export default function FilmList() {
 
   return (
       <ul className={styles.container}>
-        {context.movies?.map((movie) => (
+        {context.moviesInState?.map((movie) => (
           <li key={movie.id}>
             <FilmCard
               src={movie.poster_path}

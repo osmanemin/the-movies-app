@@ -1,13 +1,21 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   margin: 5px 0;
   cursor: pointer;
-  width: max-content;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.container:hover{
+  opacity: .8;
+  border: 1px solid white;
 }
 
 .title {
+  margin-top: 0;
   margin-left: 10px;
   color: white;
 }

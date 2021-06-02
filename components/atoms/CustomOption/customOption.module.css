@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.container:hover{
+  opacity: .8;
+}
+
 .text {
   cursor: pointer;
   margin: 0;

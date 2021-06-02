@@ -10,13 +10,13 @@ export default function NavigationMenu() {
     <div className={styles.container}>
       <FMIcon className={styles.container} />
       <div className={styles.menu}>
+        <NavigationButton title="Most Popular" href="/">
+          <MostPopular />
+        </NavigationButton>
         <NavigationButton title="Upcoming" href="/upcoming">
           <MostPopular />
         </NavigationButton>
         <NavigationButton title="Top Rated" href="/top-rated">
-          <MostPopular />
-        </NavigationButton>
-        <NavigationButton title="Most Popular" href="/most-popular">
           <MostPopular />
         </NavigationButton>
         <NavigationButton title="Trending" href="/trending">

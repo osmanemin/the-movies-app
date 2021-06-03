@@ -14,7 +14,7 @@ export default function Search() {
   const [query, setQuery] = useState();
 
   useEffect(() => {
-    setQuery(window.location.href.split("=")[1]);
+    window.location.href.includes("=") && setQuery(window.location.href.split("=")[1]);
   });
 
   useEffect(() => {

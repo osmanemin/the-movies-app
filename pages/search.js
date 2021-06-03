@@ -11,14 +11,14 @@ export default function Search() {
 
   let movies;
 
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    window.location.href.includes("=") && setQuery(window.location.href.split("=")[1]);
+    window.location.search.includes("=") && setQuery(window.location.search.split("=")[1]);
   });
 
   useEffect(() => {
-    getMovies();
+    !query || getMovies();
   }, [query]);
 
   const getMovies = async () => {

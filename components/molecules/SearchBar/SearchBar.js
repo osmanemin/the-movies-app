@@ -1,11 +1,19 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import styles from "./searchBar.module.css";
 
-import { getSuggestionsMovies } from "../../../hooks/GetMovies";
 import SearchBarSuggestion from "../SearchBarSuggestion/SearchBarSuggestion";
+import {useDebounce} from "../../../hooks/UseDebounce";
+
+
+function searchCharacters(query) {
+  return fetch(
+    `http://localhost:3000/api/search?q=${query}`
+  ).then((res) => res.json());
+}
 
 export default function SearchBar() {
+
   const inputRef = useRef(null);
   const [value, setValue] = useState("");
   const [displayBg, setDisplayBg] = useState("none");
@@ -13,14 +21,27 @@ export default function SearchBar() {
   const [displayPopup, setDisplayPopup] = useState("none");
   const [zIndex, setZIndex] = useState("0");
 
-  const [suggestions, clearSuggestions, setSuggestions] =
-    getSuggestionsMovies();
+  // useDebounce
+  const [results, setResults] = useState([]);
+  const debouncedSearchTerm = useDebounce(value, 300);
+  useEffect(
+    () => {
+      if (debouncedSearchTerm) {
+        searchCharacters(debouncedSearchTerm).then((results) => {
+          setResults(results);
+        });
+      } else {
+        setResults([]);
+      }
+    },
+    [debouncedSearchTerm] 
+  );
 
   const handleChange = (event) => {
     setValue(event.target.value);
     event.target.value.length > 2
-      ? getSuggestions(event.target.value)
-      : clearSuggestions([]);
+      ? setValue(event.target.value)
+      : setValue("");
   };
 
   const handleSearch = () => {
@@ -43,7 +64,7 @@ export default function SearchBar() {
     setDisplayBg(display);
     setDisplayPopup(display);
     display === "none" ? setZIndex("0") : setZIndex("9");
-    clearSuggestions([]);
+    setValue("");
   };
 
   const handleCancel = () => {
@@ -52,10 +73,7 @@ export default function SearchBar() {
     setValue("");
   };
 
-  const getSuggestions = (value) => {
-    setDisplayPopup("block");
-    setSuggestions(value);
-  };
+ 
 
   return (
     <div className={styles.container} style={{ zIndex: `${zIndex}0` }}>
@@ -89,7 +107,7 @@ export default function SearchBar() {
           src="/cancel.svg"
         />
         <div style={{ display: `${displayPopup}` }} className={styles.popup}>
-          {suggestions.slice(0, 5).map((suggestion, index) => (
+          {results.slice(0, 5).map((suggestion, index) => (
             <SearchBarSuggestion
               src={suggestion.poster_path}
               title={suggestion.original_title}

@@ -29,7 +29,7 @@ const FilmCard = ({
     });
   }, [favoritesList]);
 
-  const addToFavorites = () => {
+  const clickHandle = () => {
     if (addIcon === "/plus.svg") {
       addToList({ poster_path, original_title, vote_average, id });
       setAddIcon("/negative.svg");
@@ -67,7 +67,7 @@ const FilmCard = ({
         <TitleSm className={styles.title} title={original_title} />
         <Image
           onClick={() => {
-            addToFavorites();
+            clickHandle();
           }}
           className={styles.plusButton}
           src={addIcon}

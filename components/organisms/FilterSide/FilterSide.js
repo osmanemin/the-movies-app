@@ -5,27 +5,37 @@ import styles from "./filterSide.module.css";
 import { UserContext } from "../../../store/Context";
 import SearchBar from "../../molecules/SearchBar/SearchBar";
 import CustomSelection from "../../molecules/CustomSelection/CustomSelection";
-import BubbleSort from "../../../hooks/BubbleSort";
 
 export default function FilterSide() {
   const context = useContext(UserContext);
-  const [sortType, setSortType] = useState();
-  const [moviesList, setMoviesList] = useState(context.movies);
+  const [sortType, setSortType] = useState("default");
 
-  const array = ["default", "imdb: Low to High", "imdb: High to Low"];
+  const sortOptions = ["default", "imdb: Low to High", "imdb: High to Low"];
 
   useEffect(() => {
+    sortType === "default" && context.setMoviesInState(context.movies);
     sortType === "imdb: Low to High" &&
-    context.setMoviesInState(BubbleSort(context.movies).reverse());
+      context.setMoviesInState(
+        [...context.movies].sort((a, b) => {
+          return a.vote_average - b.vote_average;
+        })
+      );
     sortType === "imdb: High to Low" &&
-    context.setMoviesInState(BubbleSort(context.movies));
-    sortType === "default" && setMoviesList(context.movies);
+      context.setMoviesInState(
+        [...context.movies].sort((a, b) => {
+          return b.vote_average - a.vote_average;
+        })
+      );
   }, [sortType]);
 
   return (
     <div className={styles.container}>
       <SearchBar />
-      <CustomSelection title="Sort by" setSortType={setSortType} values={array} />
+      <CustomSelection
+        title="Sort by"
+        setSortType={setSortType}
+        values={sortOptions}
+      />
     </div>
   );
 }

@@ -6,10 +6,11 @@ module.exports = {
     domains: ["image.tmdb.org"],
   },
   serverRuntimeConfig: {
-    mySecret: process.env.REACT_APP_ACCESS_KEY,
+    mySecret: process.env.ACCESS_KEY,
+    baseDomain: process.env.API_URL
   },
   publicRuntimeConfig: {
-    accessKey: process.env.REACT_APP_ACCESS_KEY,
+    accessKey: process.env.ACCESS_KEY,
   },
   experimental: {
     optionalCatchAll: true,

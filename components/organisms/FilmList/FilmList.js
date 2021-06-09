@@ -13,9 +13,9 @@ export default function FilmList() {
         {context.moviesInState?.map((movie) => (
           <li key={movie.id}>
             <FilmCard
-              src={movie.poster_path}
-              title={movie.original_title}
-              voteAverage={movie.vote_average}
+              poster_path={movie.poster_path}
+              original_title={movie.original_title}
+              vote_average={movie.vote_average}
               id={movie.id}
             />
           </li>

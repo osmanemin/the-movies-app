@@ -20,4 +20,17 @@
 
 .title {
   color: white;
+  max-width: 160px;
+}
+
+.titleBar{
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.plusButton:hover{
+  cursor: pointer;
+  transform: scale(1.7);
 }

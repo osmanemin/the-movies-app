@@ -4,7 +4,7 @@ import styles from "./filmContent.module.css";
 
 import { Context } from "../../../store/Context";
 import { TitleXl, TitleLg, Text} from "../../atoms/Texts/Texts";
-import VoteAvarage from "../../molecules/VoteAvarage/VoteAvarage";
+import VoteAverage from "../../molecules/VoteAverage/VoteAverage";
 
 export default function FilmContent() {
   const context = useContext(Context);
@@ -23,7 +23,7 @@ export default function FilmContent() {
       <Text className={styles.textMd} text={release_date + " · " + genres }/>
       <div className={styles.voteContainer}>
         <Text className={styles.textMd} text="User Score"/>
-        <VoteAvarage className={styles.voteAvarage} voteAverage={context.movie.vote_average}/>
+        <VoteAverage className={styles.voteAverage} voteAverage={context.movie.vote_average}/>
       </div>
       <div className={styles.voteContainer}>
           <Text className={styles.textMd} text="Vote Count" />

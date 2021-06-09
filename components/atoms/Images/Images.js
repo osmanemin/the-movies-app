@@ -21,8 +21,8 @@ export const Star = () => {
   return <Image src="/star.svg" width={10} height={10} />;
 };
 
-export const MostPopular = () => {
-  return <Image src="/most_popular.svg" width={30} height={30} />;
+export const NavigationIcon = ({src}) => {
+  return <Image src={src} width={30} height={30} />;
 };
 
 export const FMIcon = ({ ...props }) => {
